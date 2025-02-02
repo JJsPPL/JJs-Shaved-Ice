@@ -9,35 +9,59 @@
         body { 
             font-family: 'Lobster', sans-serif; 
             text-align: center; 
-            margin: 0 auto; 
+            margin: 0; 
             padding: 0;
             background: url('background.jpg') no-repeat center center fixed; 
             background-size: cover; 
             color: #333;
-            transform: scale(0.33);
-            transform-origin: top left;
-            width: 300%;
-            height: 300%;
-            overflow: auto;
         }
-        header, nav, section, .contact { 
-            padding: 10px 20px; 
+        header { 
+            background: rgba(255, 102, 150, 0.8); /* Added transparency to see the background */
+            padding: 20px 10px;
+            font-size: 24px;
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
         header img {
-            width: 100px; /* Adjust according to your design needs */
+            width: 120px;
+            height: auto;
         }
         nav a {
-            font-size: 16px; /* Adjust according to your design needs */
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px 5px;
+            color: #ff3366;
+            text-decoration: none;
+            font-weight: bold;
         }
         .menu-container, #events {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Full width on smaller screens */
+            gap: 10px;
             justify-items: center;
         }
         .menu-container img, #events img {
             width: 80%;
             height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .contact { 
+            background: rgba(255, 102, 150, 0.9); /* Added transparency */
+            color: white; 
+            padding: 15px; 
+            font-size: 16px;
+        }
+        /* Media Queries for responsive adjustments */
+        @media (min-width: 768px) {
+            header { font-size: 36px; }
+            nav a { font-size: 20px; }
+            .menu-container, #events {
+                grid-template-columns: repeat(3, 1fr); /* Grid layout for larger screens */
+            }
+            .menu-container img, #events img {
+                width: 100%; /* Larger images on desktop */
+            }
         }
     </style>
 </head>
@@ -52,13 +76,25 @@
         <a href="#contact">Contact</a>
     </nav>
     <section id="menu">
-        <!-- Menu items -->
+        <h2>Our Menu</h2>
+        <!-- Replace these src attributes with actual paths to your menu item images -->
+        <div class="menu-container">
+            <img src="menu-item1.jpg" alt="Menu Item 1">
+            <img src="menu-item2.jpg" alt="Menu Item 2">
+            <img src="menu-item3.jpg" alt="Menu Item 3">
+        </div>
     </section>
     <section id="events">
-        <!-- Event photos -->
+        <h2>Upcoming Events</h2>
+        <!-- Replace these src attributes with actual paths to your event images -->
+        <img src="event1.jpg" alt="Event 1">
+        <img src="event2.jpg" alt="Event 2">
+        <img src="event3.jpg" alt="Event 3">
     </section>
     <section class="contact">
-        <!-- Contact info -->
+        <h2>Contact Us</h2>
+        <p>Email: example@example.com</p>
+        <p>Phone: 123-456-7890</p>
     </section>
 </body>
 </html>
