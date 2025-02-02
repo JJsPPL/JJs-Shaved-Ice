@@ -10,35 +10,59 @@
             text-align: center; 
             margin: 0; 
             padding: 0; 
-            background-color: #f8f9fa;
+            background-image: url('background.jpg'); /* Use an image */
+            background-size: cover;
+            background-position: center;
+            color: #333; /* Text color */
         }
         header { 
-            background: #ffcc00; 
+            background: linear-gradient(to right, #ff9900, #ffcc00); 
             padding: 20px; 
-            font-size: 24px; 
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            font-size: 28px; 
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         }
         section { padding: 20px; }
-        .menu-item { 
-            font-size: 18px; 
-            margin: 10px 0; 
-            font-weight: bold;
-        }
-        .contact { 
-            background: #f3f3f3; 
-            padding: 20px; 
-            margin-top: 20px;
-            box-shadow: 0px -2px 8px rgba(0,0,0,0.1);
-        }
-        img { 
-            max-width: 100%; 
-            height: auto;
-            border-radius: 10px;
-        }
         .menu-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+        .menu-item { 
+            font-size: 22px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #d35400; /* Orange text */
+        }
+        .contact { 
+            background: #ffcc00; 
+            color: #000; 
+            padding: 25px; 
+            font-size: 18px;
+            box-shadow: 0px -4px 8px rgba(0,0,0,0.3);
+        }
+        .contact a {
+            font-weight: bold;
+            color: #ff5733;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        img { 
+            max-width: 100%; 
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
