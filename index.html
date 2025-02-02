@@ -26,8 +26,8 @@
 
         header { 
             background: linear-gradient(to right, #ff6699, #ff3366); 
-            padding: 10px 20px; 
-            font-size: 22px; 
+            padding: 20px 20px; 
+            font-size: 36px; 
             font-weight: bold;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -37,11 +37,33 @@
         }
 
         header img {
-            max-width: 100px;
+            max-width: 150px;
             height: auto;
         }
 
         section { padding: 20px; }
+
+        /* Larger navigation links */
+        nav a {
+            font-size: 20px; /* Larger font for visibility */
+            margin-right: 20px;
+            color: #ff3366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-photo {
+            margin-top: 20px;
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
 
         .menu-container {
             display: grid;
@@ -99,7 +121,10 @@
         /* Mobile Optimization */
         @media (max-width: 768px) {
             header {
-                font-size: 18px;
+                font-size: 28px;
+            }
+            nav a {
+                font-size: 18px; /* Make the links a bit smaller for mobile */
             }
         }
 
@@ -116,11 +141,16 @@
 
     <nav>
         <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="display: inline-block; margin-right: 20px;"><a href="#menu">Menu</a></li>
-            <li style="display: inline-block; margin-right: 20px;"><a href="#events">Events</a></li>
-            <li style="display: inline-block; margin-right: 20px;"><a href="#contact">Contact</a></li>
+            <li style="display: inline-block;"><a href="#menu">Menu</a></li>
+            <li style="display: inline-block;"><a href="#events">Events</a></li>
+            <li style="display: inline-block;"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Main flyer image -->
+    <section>
+        <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo">
+    </section>
 
     <section id="menu">
         <h2>Our Menu</h2>
@@ -144,7 +174,6 @@
             <img src="image11.jpeg" alt="Strawberry Waffle" loading="lazy">
             <img src="bananachocolate.jpeg" alt="Banana Chocolate Craffle" loading="lazy">
             <img src="oreocraffle.jpeg" alt="Oreo Caffle" loading="lazy">
-            <img src="JJflyer.jpg" alt="Oreo Waffle" loading="lazy">
         </div>
     </section>
 
@@ -164,7 +193,7 @@
         <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
     </section>
 
-    <audio autoplay loop volume="0.1">
+    <audio autoplay loop>
         <source src="background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
