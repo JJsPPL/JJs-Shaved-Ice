@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,24 +15,21 @@
     <link rel="preload" href="JJflyer.jpg" as="image">
 
     <style>
-        /* 1) Overall page settings */
         body { 
-            font-family: 'Lobster', sans-serif;
-            font-size: 20px; /* Increased base font size */
-            text-align: center;
-            margin: 0;
-            padding: 0;
+            font-family: 'Lobster', sans-serif; 
+            text-align: center; 
+            margin: 0; 
+            padding: 0; 
             background: url('background.jpg') no-repeat center center fixed; 
             background-size: cover; 
             background-position: center;
             color: #333;
         }
 
-        /* 2) Header styling */
         header { 
-            background: linear-gradient(to right, #ff6699, #ff3366);
-            padding: 40px 20px;
-            font-size: 72px; /* Increased header text size from 60px */
+            background: linear-gradient(to right, #ff6699, #ff3366); 
+            padding: 40px 20px; /* Increased padding for better visibility */
+            font-size: 60px; /* Increased font size for header */
             font-weight: bold;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -40,43 +38,37 @@
             z-index: 1000;
         }
 
-        /* 3) Logo in the header */
         header img {
-            max-width: 300px;
+            max-width: 300px; /* Made logo bigger */
             height: auto;
         }
 
-        /* 4) Main sections */
-        section {
-            padding: 20px;
-        }
+        section { padding: 20px; }
 
-        /* 5) Navigation links */
         nav a {
-            font-size: 36px; /* Increased nav link size from 30px */
+            font-size: 30px; /* Increased font size for navigation links */
             margin-right: 20px;
             color: #ff3366;
             text-decoration: none;
             font-weight: bold;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
 
-        /* 6) Main flyer image at the top */
         .main-photo {
             margin-top: 40px;
-            /* Removed explicit width: 100%; 
-               We will rely on the universal img { width: 50% } rule instead */
+            width: 100%;
+            height: 400px;
             object-fit: cover;
             border-radius: 15px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        /* 7) Menu container styling (but removing the 80% rule) */
         .menu-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); 
+            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Each image takes full width */
             gap: 20px;
             justify-items: center;
             background: rgba(255, 255, 255, 0.8);
@@ -85,64 +77,82 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* 8) Contact section */
-        .contact {
-            background: #ff6699;
-            color: #000;
-            padding: 25px;
-            font-size: 28px; /* Increased from 24px */
+        .menu-container img { 
+            max-width: 80%; /* Adjusted to match the events images */
+            height: auto;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            margin: 0 auto; /* Center align the images */
+        }
+
+        .menu-item { 
+            font-size: 30px; /* Increased font size for better readability */
+            margin: 15px 0;
+            font-weight: bold;
+            color: #d35400;
+        }
+
+        .contact { 
+            background: #ff6699; 
+            color: #000; 
+            padding: 25px; 
+            font-size: 24px; /* Increased font size for contact section */
             box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
         }
+
         .contact a {
-            /* Links will inherit the larger contact font size */
             font-weight: bold;
             color: #ff3366;
             text-decoration: none;
         }
+
         .contact a:hover {
             text-decoration: underline;
         }
 
-        /* 9) Events images container (removed the 80% rule) */
         #events img {
-            /* Let the universal img rule handle sizing */
+            max-width: 80%; /* Makes event images smaller */
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
         }
 
-        /* 10) Universal image styling: now all images are half their previous displayed size */
-        img {
-            width: 50%;             /* Display images at 50% width */
-            height: auto;          /* Keep aspect ratio */
+        img { 
+            max-width: 100%; 
+            height: auto;
             border-radius: 15px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
-            display: block;        /* Helps center images when margin: 0 auto is used */
-            margin: 20px auto;     /* Space between images and auto-center */
         }
+
         img:hover {
             transform: scale(1.05);
         }
 
-        /* 11) Mobile Optimization */
+        /* Mobile Optimization */
         @media (max-width: 768px) {
             header {
-                font-size: 48px; /* Slightly smaller for mobile */
+                font-size: 36px;
             }
             nav a {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            .menu-container {
+                grid-template-columns: 1fr; /* Adjust grid for smaller screens */
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
+
     <header>
         <img src="2JJ.jpg" alt="JJ Shaved Ice Logo">
         <h1>JJ's Shaved Ice!</h1>
         <p>Delicious Shaved Ice & Treats!</p>
     </header>
 
-    <!-- Navigation -->
     <nav>
         <ul style="list-style: none; padding: 0; margin: 0;">
             <li style="display: inline-block;"><a href="#menu">Menu</a></li>
@@ -151,12 +161,10 @@
         </ul>
     </nav>
 
-    <!-- Main Flyer Image -->
     <section>
         <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo">
     </section>
 
-    <!-- Menu Section -->
     <section id="menu">
         <h2>Our Menu</h2>
         <div class="menu-container">
@@ -175,25 +183,22 @@
         </div>
     </section>
 
-    <!-- Events Section -->
     <section id="events">
         <h2>Our Events</h2>
         <img src="IMG_6170.jpeg" alt="Event Booth" loading="lazy">
-        <img src="IMG_6171.jpeg" alt="Event Crowd" loading="lazy">
-        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" loading="lazy">
-        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" loading="lazy">
-        <img src="IMG_6194.jpeg" alt="Event Image 2" loading="lazy">
-        <img src="IMG_6195.jpeg" alt="Event Image 1" loading="lazy">
+        <img src="IMG_6171.jpeg" alt="Event Crowd" loading="busy">
+        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" loading="busy">
+        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" loading="busy">
+        <img src="IMG_6194.jpeg" alt="Event Image 2" loading="busy">
+        <img src="IMG_6195.jpeg" alt="Event Image 1" loading="busy">
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
         <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
-        <p>📷 Instagram: 
-          <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a>
-        </p>
+        <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
     </section>
 
 </body>
+
 </html>
