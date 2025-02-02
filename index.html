@@ -68,7 +68,7 @@
 
         .menu-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased the min size to make images larger */
             gap: 20px;
             justify-items: center;
             background: rgba(255, 255, 255, 0.8);
@@ -112,6 +112,13 @@
 
         img:hover {
             transform: scale(1.05);
+        }
+
+        #events img {
+            max-width: 80%; /* Makes event images smaller */
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
         }
 
         /* Mobile Optimization */
