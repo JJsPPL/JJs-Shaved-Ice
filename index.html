@@ -11,7 +11,9 @@
 
     <!-- Google Fonts for styling -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Arial&display=swap" rel="stylesheet">
-    
+    <link rel="preload" href="2JJ.jpg" as="image">
+    <link rel="preload" href="JJflyer.jpg" as="image">
+
     <style>
         body { 
             font-family: 'Lobster', sans-serif; 
@@ -26,7 +28,7 @@
 
         header { 
             background: linear-gradient(to right, #ff6699, #ff3366); 
-            padding: 20px 20px; 
+            padding: 20px; 
             font-size: 36px; 
             font-weight: bold;
             color: white;
@@ -43,9 +45,8 @@
 
         section { padding: 20px; }
 
-        /* Larger navigation links */
         nav a {
-            font-size: 20px; /* Larger font for visibility */
+            font-size: 20px;
             margin-right: 20px;
             color: #ff3366;
             text-decoration: none;
@@ -56,12 +57,11 @@
             text-decoration: underline;
         }
 
-        /* Main flyer image adjustments */
         .main-photo {
             margin-top: 20px;
             width: 100%;
             height: auto;
-            object-fit: contain; /* Ensures the entire image is visible */
+            object-fit: contain;
             border-radius: 15px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
@@ -114,21 +114,18 @@
             transform: scale(1.05);
         }
 
-        /* Audio controls */
-        audio {
-            display: none;
-        }
-        
         /* Mobile Optimization */
         @media (max-width: 768px) {
             header {
                 font-size: 28px;
             }
             nav a {
-                font-size: 18px; /* Make the links a bit smaller for mobile */
+                font-size: 18px;
+            }
+            .menu-container {
+                grid-template-columns: 1fr 1fr;
             }
         }
-
     </style>
 </head>
 
@@ -148,7 +145,6 @@
         </ul>
     </nav>
 
-    <!-- Main flyer image -->
     <section>
         <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo">
     </section>
@@ -186,11 +182,6 @@
         <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
         <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
     </section>
-
-    <audio autoplay loop>
-        <source src="background-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
 
 </body>
 
