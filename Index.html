@@ -1,64 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online.">
+    <meta name="keywords" content="shaved ice, bingsu, desserts, events, food">
+    <meta name="author" content="Jonathan Pablo">
     <title>JJ Shaved Ice</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Arial&display=swap" rel="stylesheet">
+    <link rel="preload" href="2JJ.jpg" as="image">
+    <link rel="preload" href="JJflyer.jpg" as="image">
+
     <style>
         body { 
             font-family: 'Lobster', sans-serif; 
             text-align: center; 
-            margin: 0 auto; 
-            padding: 0;
+            margin: 0; 
+            padding: 0; 
             background: url('background.jpg') no-repeat center center fixed; 
             background-size: cover; 
+            background-position: center;
             color: #333;
-            transform: scale(0.33);
-            transform-origin: top left;
-            width: 300%;
-            height: 300%;
-            overflow: auto;
         }
-        header, nav, section, .contact { 
-            padding: 10px 20px; 
+
+        header { 
+            background: linear-gradient(to right, #ff6699, #ff3366); 
+            padding: 20px; 
+            font-size: 36px; 
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+
         header img {
-            width: 100px; /* Adjust according to your design needs */
+            max-width: 250px;
+            height: auto;
         }
+
+        section { padding: 20px; }
+
         nav a {
-            font-size: 16px; /* Adjust according to your design needs */
+            font-size: 40px;
+            margin-right: 20px;
+            color: #ff3366;
+            text-decoration: none;
+            font-weight: bold;
         }
-        .menu-container, #events {
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-photo {
+            margin-top: 20px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased the min size to make images larger */
             gap: 20px;
             justify-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .menu-container img, #events img {
-            width: 80%;
+
+        .menu-item { 
+            font-size: 40px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #d35400;
+        }
+
+        .contact { 
+            background: #ff6699; 
+            color: #000; 
+            padding: 25px; 
+            font-size: 18px;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact a {
+            font-weight: bold;
+            color: #ff3366;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        img { 
+            max-width: 100%; 
             height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        #events img {
+            max-width: 80%; /* Makes event images smaller */
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            header {
+                font-size: 40px;
+            }
+            nav a {
+                font-size: 40px;
+            }
+            .menu-container {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
+
     <header>
         <img src="2JJ.jpg" alt="JJ Shaved Ice Logo">
-        <h1>JJ's Shaved Ice</h1>
+        <h1>JJ's Shaved Ice!</h1>
+        <p>Delicious Shaved Ice & Treats!</p>
     </header>
+
     <nav>
-        <a href="#menu">Menu</a>
-        <a href="#events">Events</a>
-        <a href="#contact">Contact</a>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="display: inline-block;"><a href="#menu">Menu</a></li>
+            <li style="display: inline-block;"><a href="#events">Events</a></li>
+            <li style="display: inline-block;"><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
+
+    <section>
+        <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo">
+    </section>
+
     <section id="menu">
-        <!-- Menu items -->
+        <h2>Our Menu</h2>
+            <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" loading="lazy">
+            <img src="image0.jpeg" alt="Strawberry Bingsu" loading="lazy">
+            <img src="image1.jpeg" alt="Mango Bingsu" loading="lazy">
+            <img src="image2.jpeg" alt="Cotton Candy Bingsu" loading="lazy">
+            <img src="image5.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image7.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image8.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image9.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image10.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image11.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="pickledeggs.jpeg" alt="Pickled Eggs" loading="lazy">
+            <img src="pickledpapaya.jpeg" alt="Pickled Papaya" loading="lazy">
+        </div>
     </section>
+
     <section id="events">
-        <!-- Event photos -->
+        <h2>Our Events</h2>
+        <img src="IMG_6170.jpeg" alt="Event Booth" loading="lazy">
+        <img src="IMG_6171.jpeg" alt="Event Crowd" loading="lazy">
+        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" loading="lazy">
+        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" loading="lazy">
+        <img src="IMG_6194.jpeg" alt="Event Image 2" loading="lazy">
+        <img src="IMG_6195.jpeg" alt="Event Image 1" loading="lazy">
     </section>
-    <section class="contact">
-        <!-- Contact info -->
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
+        <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
     </section>
+
 </body>
+
 </html>
