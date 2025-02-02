@@ -26,8 +26,8 @@
 
         header { 
             background: linear-gradient(to right, #ff6699, #ff3366); 
-            padding: 20px; 
-            font-size: 28px; 
+            padding: 10px 20px; 
+            font-size: 22px; 
             font-weight: bold;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -37,7 +37,7 @@
         }
 
         header img {
-            max-width: 150px;
+            max-width: 100px;
             height: auto;
         }
 
@@ -93,13 +93,13 @@
 
         /* Audio controls */
         audio {
-            margin-top: 20px;
+            display: none;
         }
         
         /* Mobile Optimization */
         @media (max-width: 768px) {
             header {
-                font-size: 24px;
+                font-size: 18px;
             }
         }
 
@@ -164,7 +164,7 @@
         <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
     </section>
 
-    <audio controls>
+    <audio autoplay loop volume="0.1">
         <source src="background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
