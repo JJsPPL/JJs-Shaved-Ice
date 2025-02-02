@@ -1,142 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online.">
+    <meta name="keywords" content="shaved ice, bingsu, desserts, events, food">
+    <meta name="author" content="Jonathan Pablo">
     <title>JJ Shaved Ice</title>
+
+    <!-- Google Fonts for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Arial&display=swap" rel="stylesheet">
+    
     <style>
         body { 
-            font-family: Arial, sans-serif; 
+            font-family: 'Lobster', sans-serif; 
             text-align: center; 
             margin: 0; 
             padding: 0; 
-            background: url('background.jpg') no-repeat center center fixed; background-size: cover; /* Shades of pink */
-            background-size: cover;
+            background: url('background.jpg') no-repeat center center fixed; 
+            background-size: cover; 
             background-position: center;
-            color: #333; /* Text color */
+            color: #333;
         }
+
         header { 
             background: linear-gradient(to right, #ff6699, #ff3366); 
             padding: 20px; 
             font-size: 28px; 
             font-weight: bold;
             color: white;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+
         section { padding: 20px; }
+
         .menu-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .menu-item { 
             font-size: 22px;
             margin: 15px 0;
             font-weight: bold;
-            color: #d35400; /* Orange text */
+            color: #d35400;
         }
+
         .contact { 
             background: #ff6699; 
             color: #000; 
             padding: 25px; 
             font-size: 18px;
-            box-shadow: 0px -4px 8px rgba(0,0,0,0.3);
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
         }
+
         .contact a {
             font-weight: bold;
             color: #ff3366;
             text-decoration: none;
         }
+
         .contact a:hover {
             text-decoration: underline;
         }
+
         img { 
             max-width: 100%; 
             height: auto;
             border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
         }
+
         img:hover {
             transform: scale(1.05);
         }
+
+        /* Audio controls */
+        audio {
+            margin-top: 20px;
+        }
+        
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            header {
+                font-size: 24px;
+            }
+        }
+
     </style>
 </head>
+
 <body>
+
     <header>
-        <img src="2JJ.jpg" alt="JJ Shaved Ice Logo" width="150">
+        <img src="2JJ.jpg" alt="JJ Shaved Ice Logo">
         <h1>JJ's Shaved Ice!</h1>
         <p>Delicious Shaved Ice & Treats!</p>
     </header>
-    
-    <section>
+
+    <nav>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="display: inline-block; margin-right: 20px;"><a href="#menu">Menu</a></li>
+            <li style="display: inline-block; margin-right: 20px;"><a href="#events">Events</a></li>
+            <li style="display: inline-block; margin-right: 20px;"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="menu">
         <h2>Our Menu</h2>
         <div class="menu-container">
-            
-            <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" width="300">
-            
-            <img src="bingsu.jpeg" alt="Bingsu Dessert" width="300">
-            
-            <img src="mangobingsu.jpeg" alt="Mango Bingsu" width="300">
-                                           
-            <img src="pickledeggs.jpeg" alt="Pickled Eggs" width="300">
-                        
-            <img src="pickledpapaya.jpeg" alt="Pickled Papaya" width="300">
-                        
-            <img src="strawberryshaveice.jpeg" alt="Strawberry Shaved Ice" width="300">
-            
-            <img src="image0.jpeg" alt="Strawberry Bingsu" width="300">
-            
-            <img src="image1.jpeg" alt="Mango Bingsu" width="300">
-            
-            <img src="image2.jpeg" alt="Cotton Candy Bingsu" width="300">
-            
-            <img src="image12.jpeg" alt="Strawberry Waffle" width="300">
-            
-            <img src="image13.jpeg" alt="Strawberry Waffle" width="300">
-            
-            <img src="image5.jpeg" alt="Strawberry Waffle" width="300">
-            
-            <img src="image7.jpeg" alt="Strawberry Waffle" width="300">
-            
-            <img src="image8.jpeg" alt="Strawberry Waffle" width="300">
-            
-            <img src="image9.jpeg" alt="Strawberry Waffle" width="300">
-                    
-            <img src="image10.jpeg" alt="Strawberry Waffle" width="300">
-
-            <img src="image11.jpeg" alt="Strawberry Waffle" width="300">
-
-            <img src="bananachocolate.jpeg" alt="Banana Chocolate Craffle" width="300">
-                        
-            <img src="oreocraffle.jpeg" alt="Oreo Caffle" width="300">
- 
-            <img src="JJflyer.jpg" alt="Oreo Waffle" width="300">
+            <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" loading="lazy">
+            <img src="bingsu.jpeg" alt="Bingsu Dessert" loading="lazy">
+            <img src="mangobingsu.jpeg" alt="Mango Bingsu" loading="lazy">
+            <img src="pickledeggs.jpeg" alt="Pickled Eggs" loading="lazy">
+            <img src="pickledpapaya.jpeg" alt="Pickled Papaya" loading="lazy">
+            <img src="strawberryshaveice.jpeg" alt="Strawberry Shaved Ice" loading="lazy">
+            <img src="image0.jpeg" alt="Strawberry Bingsu" loading="lazy">
+            <img src="image1.jpeg" alt="Mango Bingsu" loading="lazy">
+            <img src="image2.jpeg" alt="Cotton Candy Bingsu" loading="lazy">
+            <img src="image12.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image13.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image5.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image7.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image8.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image9.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image10.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="image11.jpeg" alt="Strawberry Waffle" loading="lazy">
+            <img src="bananachocolate.jpeg" alt="Banana Chocolate Craffle" loading="lazy">
+            <img src="oreocraffle.jpeg" alt="Oreo Caffle" loading="lazy">
+            <img src="JJflyer.jpg" alt="Oreo Waffle" loading="lazy">
         </div>
     </section>
-    
-    <section>
+
+    <section id="events">
         <h2>Our Events</h2>
-        <img src="IMG_6170.jpeg" alt="Event Booth" width="300">
-        <img src="IMG_6171.jpeg" alt="Event Crowd" width="300">
-        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" width="300">
-        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" width="300">
-        <img src="IMG_6194.jpeg" alt="Event Image 2" width="300">
-        <img src="IMG_6195.jpeg" alt="Event Image 1" width="300">
+        <img src="IMG_6170.jpeg" alt="Event Booth" loading="lazy">
+        <img src="IMG_6171.jpeg" alt="Event Crowd" loading="lazy">
+        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" loading="lazy">
+        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" loading="lazy">
+        <img src="IMG_6194.jpeg" alt="Event Image 2" loading="lazy">
+        <img src="IMG_6195.jpeg" alt="Event Image 1" loading="lazy">
     </section>
-    
-    <section class="contact">
+
+    <section class="contact" id="contact">
         <h2>Contact Us</h2>
         <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
         <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
     </section>
-<audio autoplay loop>
+
+    <audio controls>
         <source src="background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
 </body>
+
 </html>
