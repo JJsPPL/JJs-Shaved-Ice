@@ -66,28 +66,52 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-
-        #events img {
-            max-width: 25%; /* Makes event images smaller */
-            height: auto;
-            object-fit: contain;
-            margin: 0 auto;
-        }
-
+        /* Updated Menu Image Styles */
         .menu-container {
-            max-width: 25%; /* Makes event images smaller */
-            height: auto;
-            object-fit: contain;
-            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-            .menu-item { 
-            font-size: 50px;
-            margin: 15px 0;
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 150px; /* Reduced max width to make images smaller */
+        }
+
+        .menu-item img {
+            width: 100%; /* Ensures the image scales with the container */
+            max-width: 120px; /* Limits the image size */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item p {
+            font-size: 16px;
             font-weight: bold;
             color: #d35400;
+            margin-top: 5px;
         }
 
+        /* Event images */
+        #events img {
+            max-width: 25%;
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        /* Contact section */
         .contact { 
             background: #ff6699; 
             color: #000; 
@@ -105,26 +129,6 @@
         .contact a:hover {
             text-decoration: underline;
         }
-
-        img { 
-            max-width: 25%; 
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        #events img {
-            max-width: 25%; /* Makes event images smaller */
-            height: auto;
-            object-fit: contain;
-            margin: 0 auto;
-        }
-
     </style>
 </head>
 
@@ -150,30 +154,37 @@
 
     <section id="menu">
         <h2>Our Menu</h2>
-    <div class="menu-container">
-            <img src="Bluberry Shaved Ice.jpeg" alt="Blueberry Shaved Ice" loading="lazy">
-            <img src="Straberry Shaved Ice.jpeg" alt="Straberry Shaved Ice" loading="lazy">
-            <img src="Lime Shaved Ice.jpeg" alt="Lime Shaved Ice" loading="lazy">
-            <img src="Mango Bingsu.jpeg" alt="Mango Bingsu" loading="lazy">
-            <img src="Strawberry Bingsu.jpeg" alt="Strawberry Bingsu" loading="lazy">
-            <img src="Cotton Candy Bingsu.jpeg" alt="Cotton Candy Bingsu" loading="lazy">
-            <img src="Chocolate Banana Craffle.jpeg" alt="Chocolate Banana Craffle" loading="lazy">
-            <img src="Oreo Craffle.jpeg" alt="Oreo Craffle" loading="lazy">
-            <img src="Strawberry Craffle.jpeg" alt="Strawberry Craffle" loading="lazy">
-            <img src="Calamanci Lemonade.jpeg" alt="Calamanci Lemonade" loading="lazy">
-            <img src="Pickled Eggs.jpeg" alt="Pickled Eggs" loading="lazy">
-            <img src="Pickled Papaya.jpeg" alt="Pickled Papaya" loading="lazy">
-        </div>
-    </section>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="Bluberry Shaved Ice.jpeg" alt="Blueberry Shaved Ice">
+                <p>Blueberry Shaved Ice</p>
+            </div>
 
-    <section id="events">
-        <h2>Our Events</h2>
-        <img src="Roror1.jpeg" alt="Event Booth" loading="lazy">
-        <img src="Roro2.jpeg" alt="Event Crowd" loading="lazy">
-        <img src="Longline.jpeg" alt="JJ Crowd" loading="lazy">
-        <img src="helper1.jpeg" alt="JJ Shaved Ice Orders" loading="lazy">
-        <img src="helpers2.jpeg" alt="Event Image 1" loading="lazy">
-        <img src="helper3.jpeg" alt="Event Image 2" loading="lazy">
+            <div class="menu-item">
+                <img src="Strawberry Shaved Ice.jpeg" alt="Strawberry Shaved Ice">
+                <p>Strawberry Shaved Ice</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="Lime Shaved Ice.jpeg" alt="Lime Shaved Ice">
+                <p>Lime Shaved Ice</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="Mango Bingsu.jpeg" alt="Mango Bingsu">
+                <p>Mango Bingsu</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="Strawberry Bingsu.jpeg" alt="Strawberry Bingsu">
+                <p>Strawberry Bingsu</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="Cotton Candy Bingsu.jpeg" alt="Cotton Candy Bingsu">
+                <p>Cotton Candy Bingsu</p>
+            </div>
+        </div>
     </section>
 
     <section class="contact" id="contact">
