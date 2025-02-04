@@ -2,297 +2,185 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online.">
-  <meta name="keywords" content="shaved ice, bingsu, desserts, events, food">
-  <meta name="author" content="Jonathan Pablo">
-  <title>JJ Shaved Ice</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online.">
+    <meta name="keywords" content="shaved ice, bingsu, desserts, events, food">
+    <meta name="author" content="Jonathan Pablo">
+    <title>JJ Shaved Ice</title>
 
-  <!-- Google Fonts for styling -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Arial&display=swap" rel="stylesheet">
-  <link rel="preload" href="2JJ.jpg" as="image">
-  <link rel="preload" href="JJflyer.jpg" as="image">
+    <!-- Google Fonts for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Arial&display=swap" rel="stylesheet">
+    <link rel="preload" href="2JJ.jpg" as="image">
+    <link rel="preload" href="JJflyer.jpg" as="image">
 
-  <style>
-    /* ------------------------------- */
-    /* Base Styles                     */
-    /* ------------------------------- */
-    body {
-      font-family: 'Lobster', sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      background-position: center;
-      color: #333;
-    }
+    <style>
+        body { 
+            font-family: 'Lobster', sans-serif; 
+            text-align: center; 
+            margin: 0; 
+            padding: 0; 
+            background: url('background.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            background-position: center;
+            color: #333;
+        }
 
-    header {
-      background: linear-gradient(to right, #ff6699, #ff3366);
-      padding: 20px;
-      font-size: 50px;
-      font-weight: bold;
-      color: white;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        header { 
+            background: linear-gradient(to right, #ff6699, #ff3366); 
+            padding: 20px; 
+            font-size: 50px; 
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    header img {
-      max-width: 100px;
-      height: auto;
-      vertical-align: middle;
-    }
+        header img {
+            max-width: 100px;
+            height: auto;
+        }
 
-    nav a {
-      font-size: 50px;
-      margin-right: 20px;
-      color: #ff3366;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        section { padding: 20px; }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+        nav a {
+            font-size: 50px;
+            margin-right: 20px;
+            color: #ff3366;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    section {
-      padding: 20px;
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    .main-photo {
-      margin-top: 20px;
-      width: 25%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 15px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    }
+        .main-photo {
+            margin-top: 20px;
+            width: 25%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
 
-    /* Generic image styles – these apply unless overridden */
-    img {
-      max-width: 25%;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease-in-out;
-    }
 
-    img:hover {
-      transform: scale(1.05);
-    }
+        #events img {
+            max-width: 20%; /* Makes event images smaller */
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
 
-    /* ------------------------------- */
-    /* Events Section Styles           */
-    /* ------------------------------- */
-    #events img {
-      max-width: 25%;
-      height: auto;
-      object-fit: contain;
-      margin: 0 auto;
-    }
+            .menu-container {
+            max-width: 25%; /* Makes event images smaller */
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
 
-    /* ------------------------------- */
-    /* Contact Section Styles          */
-    /* ------------------------------- */
-    .contact {
-      background: #ff6699;
-      color: #000;
-      padding: 25px;
-      font-size: 18px;
-      box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
-    }
+            .menu-item { 
+            font-size: 50px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #d35400;
+        }
 
-    .contact a {
-      font-weight: bold;
-      color: #ff3366;
-      text-decoration: none;
-    }
+        .contact { 
+            background: #ff6699; 
+            color: #000; 
+            padding: 25px; 
+            font-size: 18px;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
+        }
 
-    .contact a:hover {
-      text-decoration: underline;
-    }
+        .contact a {
+            font-weight: bold;
+            color: #ff3366;
+            text-decoration: none;
+        }
 
-    /* ------------------------------- */
-    /* Menu Section – New Layout       */
-    /* ------------------------------- */
-    /* Remove the old .menu-container sizing and create a flex grid layout */
-    #menu {
-      background: rgba(255, 255, 255, 0.8); /* Optional background for readability */
-      padding: 40px 20px;
-    }
+        .contact a:hover {
+            text-decoration: underline;
+        }
 
-    #menu h2 {
-      font-size: 3em;
-      margin-bottom: 30px;
-      color: #ff3366;
-    }
+        img { 
+            max-width: 25%; 
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
 
-    .menu-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+        img:hover {
+            transform: scale(1.05);
+        }
 
-    /* Each menu item has its own container with a white background, padding, and a shadow */
-    .menu-item {
-      background: #fff;
-      border: 2px solid #ddd;
-      border-radius: 15px;
-      padding: 15px;
-      width: 200px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        #events img {
+            max-width: 25%; /* Makes event images smaller */
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
 
-    /* Override the generic image styles for menu images */
-    .menu-item img {
-      width: 50%; /* Makes the images display at half their current size */
-      height: auto;
-      border-radius: 10px;
-    }
-
-    /* Menu item caption text set to 3X larger font size */
-    .menu-caption {
-      font-size: 3em;
-      margin-top: 10px;
-      color: #d35400;
-      text-align: center;
-    }
-
-    /* ------------------------------- */
-    /* Responsive adjustments          */
-    /* ------------------------------- */
-    @media (max-width: 600px) {
-      .menu-item {
-        width: 45%;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .menu-item {
-        width: 90%;
-      }
-    }
-  </style>
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="2JJ.jpg" alt="JJ Shaved Ice Logo">
-    <h1>JJ's Shaved Ice!</h1>
-    <p>Delicious Shaved Ice & Treats!</p>
-  </header>
+    <header>
+        <img src="2JJ.jpg" alt="JJ Shaved Ice Logo">
+        <h1>JJ's Shaved Ice!</h1>
+        <p>Delicious Shaved Ice & Treats!</p>
+    </header>
 
-  <nav>
-    <ul style="list-style: none; padding: 0; margin: 0;">
-      <li style="display: inline-block;"><a href="#menu">Menu</a></li>
-      <li style="display: inline-block;"><a href="#events">Events</a></li>
-      <li style="display: inline-block;"><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="display: inline-block;"><a href="#menu">Menu</a></li>
+            <li style="display: inline-block;"><a href="#events">Events</a></li>
+            <li style="display: inline-block;"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-  <section>
-    <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo">
-  </section>
+    <section>
+        <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo">
+    </section>
 
-  <!-- ------------------------------- -->
-  <!-- Menu Section with Captions      -->
-  <!-- ------------------------------- -->
-  <section id="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-container">
-      <!-- Menu Item 1 -->
-      <div class="menu-item">
-        <img src="Bluberry Shaved Ice.jpeg" alt="Blueberry Shaved Ice" loading="lazy">
-        <div class="menu-caption">Blueberry Shaved Ice</div>
-      </div>
-      <!-- Menu Item 2 -->
-      <div class="menu-item">
-        <img src="Straberry Shaved Ice.jpeg" alt="Straberry Shaved Ice" loading="lazy">
-        <div class="menu-caption">Straberry Shaved Ice</div>
-      </div>
-      <!-- Menu Item 3 -->
-      <div class="menu-item">
-        <img src="Lime Shaved Ice.jpeg" alt="Lime Shaved Ice" loading="lazy">
-        <div class="menu-caption">Lime Shaved Ice</div>
-      </div>
-      <!-- Menu Item 4 -->
-      <div class="menu-item">
-        <img src="Mango Bingsu.jpeg" alt="Mango Bingsu" loading="lazy">
-        <div class="menu-caption">Mango Bingsu</div>
-      </div>
-      <!-- Menu Item 5 -->
-      <div class="menu-item">
-        <img src="Strawberry Bingsu.jpeg" alt="Strawberry Bingsu" loading="lazy">
-        <div class="menu-caption">Strawberry Bingsu</div>
-      </div>
-      <!-- Menu Item 6 -->
-      <div class="menu-item">
-        <img src="Cotton Candy Bingsu.jpeg" alt="Cotton Candy Bingsu" loading="lazy">
-        <div class="menu-caption">Cotton Candy Bingsu</div>
-      </div>
-      <!-- Menu Item 7 -->
-      <div class="menu-item">
-        <img src="Chocolate Banana Craffle.jpeg" alt="Chocolate Banana Craffle" loading="lazy">
-        <div class="menu-caption">Chocolate Banana Craffle</div>
-      </div>
-      <!-- Menu Item 8 -->
-      <div class="menu-item">
-        <img src="Oreo Craffle.jpeg" alt="Oreo Craffle" loading="lazy">
-        <div class="menu-caption">Oreo Craffle</div>
-      </div>
-      <!-- Menu Item 9 -->
-      <div class="menu-item">
-        <img src="Strawberry Craffle.jpeg" alt="Strawberry Craffle" loading="lazy">
-        <div class="menu-caption">Strawberry Craffle</div>
-      </div>
-      <!-- Menu Item 10 -->
-      <div class="menu-item">
-        <img src="Calamanci Lemonade.jpeg" alt="Calamanci Lemonade" loading="lazy">
-        <div class="menu-caption">Calamanci Lemonade</div>
-      </div>
-      <!-- Menu Item 11 -->
-      <div class="menu-item">
-        <img src="Pickled Eggs.jpeg" alt="Pickled Eggs" loading="lazy">
-        <div class="menu-caption">Pickled Eggs</div>
-      </div>
-      <!-- Menu Item 12 -->
-      <div class="menu-item">
-        <img src="Pickled Papaya.jpeg" alt="Pickled Papaya" loading="lazy">
-        <div class="menu-caption">Pickled Papaya</div>
-      </div>
-    </div>
-  </section>
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-container">
+            <img src="Bluberry Shaved Ice.jpeg" alt="Blueberry Shaved Ice" loading="lazy">
+            <img src="Straberry Shaved Ice.jpeg" alt="Straberry Shaved Ice" loading="lazy">
+            <img src="Lime Shaved Ice.jpeg" alt="Lime Shaved Ice" loading="lazy">
+            <img src="Mango Bingsu.jpeg" alt="Mango Bingsu" loading="lazy">
+            <img src="Strawberry Bingsu.jpeg" alt="Strawberry Bingsu" loading="lazy">
+            <img src="Cotton Candy Bingsu.jpeg" alt="Cotton Candy Bingsu" loading="lazy">
+            <img src="Chocolate Banana Craffle.jpeg" alt="Chocolate Banana Craffle" loading="lazy">
+            <img src="Oreo Craffle.jpeg" alt="Oreo Craffle" loading="lazy">
+            <img src="Strawberry Craffle.jpeg" alt="Strawberry Craffle" loading="lazy">
+            <img src="Calamanci Lemonade.jpeg" alt="Calamanci Lemonade" loading="lazy">
+            <img src="Pickled Eggs.jpeg" alt="Pickled Eggs" loading="lazy">
+            <img src="Pickled Papaya.jpeg" alt="Pickled Papaya" loading="lazy">
+        </div>
+    </section>
 
-  <!-- ------------------------------- -->
-  <!-- Events Section                  -->
-  <!-- ------------------------------- -->
-  <section id="events">
-    <h2>Our Events</h2>
-    <img src="Roror1.jpeg" alt="Event Booth" loading="lazy">
-    <img src="Roro2.jpeg" alt="Event Crowd" loading="lazy">
-    <img src="Longline.jpeg" alt="JJ Crowd" loading="lazy">
-    <img src="helper1.jpeg" alt="JJ Shaved Ice Orders" loading="lazy">
-    <img src="helpers2.jpeg" alt="Event Image 1" loading="lazy">
-    <img src="helper3.jpeg" alt="Event Image 2" loading="lazy">
-  </section>
+    <section id="events">
+        <h2>Our Events</h2>
+        <img src="Roror1.jpeg" alt="Event Booth" loading="lazy">
+        <img src="Roro2.jpeg" alt="Event Crowd" loading="lazy">
+        <img src="Longline.jpeg" alt="JJ Crowd" loading="lazy">
+        <img src="helper1.jpeg" alt="JJ Shaved Ice Orders" loading="lazy">
+        <img src="helpers2.jpeg" alt="Event Image 1" loading="lazy">
+        <img src="helper3.jpeg" alt="Event Image 2" loading="lazy">
+    </section>
 
-  <!-- ------------------------------- -->
-  <!-- Contact Section                 -->
-  <!-- ------------------------------- -->
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
-    <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
-  </section>
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
+        <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
+    </section>
 
 </body>
 
