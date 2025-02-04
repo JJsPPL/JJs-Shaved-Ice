@@ -39,7 +39,7 @@
         }
 
         header img {
-            max-width: 50px;
+            max-width: 25px;
             height: auto;
         }
 
@@ -58,7 +58,7 @@
         }
 
         .main-photo {
-            margin-top: 50px;
+            margin-top: 20px;
             width: 50%;
             height: auto;
             object-fit: contain;
@@ -68,7 +68,14 @@
 
 
         #events img {
-            max-width: 25%; /* Makes event images smaller */
+            max-width: 50%; /* Makes event images smaller */
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        .menu-container {
+            max-width: 50%; /* Makes event images smaller */
             height: auto;
             object-fit: contain;
             margin: 0 auto;
@@ -76,7 +83,7 @@
 
             .menu-item { 
             font-size: 50px;
-            margin: 20px 0;
+            margin: 15px 0;
             font-weight: bold;
             color: #d35400;
         }
@@ -100,7 +107,7 @@
         }
 
         img { 
-            max-width: 25%; 
+            max-width: 50%; 
             height: auto;
             border-radius: 15px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
@@ -112,7 +119,7 @@
         }
 
         #events img {
-            max-width: 25%; /* Makes event images smaller */
+            max-width: 50%; /* Makes event images smaller */
             height: auto;
             object-fit: contain;
             margin: 0 auto;
@@ -143,6 +150,7 @@
 
     <section id="menu">
         <h2>Our Menu</h2>
+    <div class="menu-container">
             <img src="Bluberry Shaved Ice.jpeg" alt="Blueberry Shaved Ice" loading="lazy">
             <img src="Straberry Shaved Ice.jpeg" alt="Straberry Shaved Ice" loading="lazy">
             <img src="Lime Shaved Ice.jpeg" alt="Lime Shaved Ice" loading="lazy">
