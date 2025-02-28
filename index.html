@@ -1,277 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online.">
-  <meta name="keywords" content="shaved ice, bingsu, desserts, events, food">
-  <meta name="author" content="Jonathan Pablo">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online." />
+  <meta name="keywords" content="shaved ice, bingsu, desserts, events, food" />
+  <meta name="author" content="Jonathan Pablo" />
   <title>JJ Shaved Ice</title>
-
-  <!-- Google Fonts for styling -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Arial&display=swap" rel="stylesheet">
-  <link rel="preload" href="2JJ.jpg" as="image">
-  <link rel="preload" href="JJflyer.jpg" as="image">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+  <link rel="preload" href="2JJ.jpg" as="image" />
+  <link rel="preload" href="JJflyer.jpg" as="image" />
 
   <style>
-    /* Global Reset */
+    /* Reset and Global Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Lobster', sans-serif;
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.4;
     }
-
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 15px;
+    }
     header {
       background: linear-gradient(to right, rgba(255,102,153,0.9), rgba(255,51,102,0.9));
-      padding: 20px;
+      padding: 10px;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-
     header img {
-      max-width: 150px;
+      max-width: 100px;
       height: auto;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
-
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      animation: fadeInDown 1s ease;
+      font-size: 1.8rem;
+      margin-bottom: 5px;
     }
-
     header p {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     nav {
       background: rgba(255,255,255,0.8);
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 80px;
-      z-index: 900;
+      padding: 5px 0;
+      text-align: center;
     }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-    }
-
-    nav li {
-      margin: 0 15px;
-    }
-
     nav a {
-      text-decoration: none;
       color: #ff3366;
-      font-size: 1.5rem;
-      font-weight: bold;
-      transition: color 0.3s ease;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.1rem;
     }
-
     nav a:hover {
       color: #d35400;
     }
-
     section {
-      padding: 40px 20px;
-      background: rgba(255,255,255,0.85);
-      margin: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.9);
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 8px;
     }
-
     .main-photo {
       width: 100%;
-      height: auto;
-      border-radius: 15px;
-      margin-bottom: 20px;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
-
-    /* Section Headings */
-    #menu h2, #events h2, .contact h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
+    h2 {
       color: #d35400;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      text-align: center;
     }
-
-    /* Grid layout for images */
-    .grid-container {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-      justify-items: center;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
     }
-
-    .grid-container img {
+    .grid img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 6px;
       transition: transform 0.3s ease;
     }
-
-    .grid-container img:hover {
+    .grid img:hover {
       transform: scale(1.05);
     }
-
     .contact {
       background: linear-gradient(to right, #ff6699, #ff3366);
       color: #fff;
       text-align: center;
-      padding: 30px;
-      border-radius: 10px;
+      padding: 15px;
+      border-radius: 8px;
     }
-
     .contact a {
       color: #fff;
-      font-weight: bold;
       text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: border-bottom 0.3s ease;
+      font-weight: bold;
     }
-
     .contact a:hover {
-      border-bottom: 2px solid #fff;
+      text-decoration: underline;
     }
-
     /* Scroll-to-top button */
     #scrollTopBtn {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 20px;
+      right: 20px;
       background-color: #ff3366;
       color: #fff;
       border: none;
-      padding: 10px 15px;
+      padding: 8px 12px;
       border-radius: 50%;
+      font-size: 1rem;
       cursor: pointer;
       display: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      font-size: 1.2rem;
     }
-
     #scrollTopBtn:hover {
       background-color: #d35400;
     }
-
-    /* Mobile Optimization */
-    @media (max-width: 768px) {
+    /* Mobile Adjustments */
+    @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       nav a {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        margin: 0 5px;
       }
-      section {
-        padding: 20px 10px;
-        margin: 10px;
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="2JJ.jpg" alt="JJ Shaved Ice Logo">
-    <h1>JJ's Shaved Ice!</h1>
-    <p>Delicious Shaved Ice & Treats!</p>
-  </header>
+  <div class="container">
+    <header>
+      <img src="2JJ.jpg" alt="JJ Shaved Ice Logo" />
+      <h1>JJ's Shaved Ice!</h1>
+      <p>Delicious Shaved Ice & Treats!</p>
+    </header>
 
-  <nav>
-    <ul>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <section>
-    <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo" loading="lazy">
-  </section>
+    <section>
+      <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo" loading="lazy" />
+    </section>
 
-  <section id="menu">
-    <h2>Our Menu</h2>
-    <div class="grid-container">
-      <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" loading="lazy">
-      <img src="image0.jpeg" alt="Strawberry Bingsu" loading="lazy">
-      <img src="image1.jpeg" alt="Mango Bingsu" loading="lazy">
-      <img src="image2.jpeg" alt="Cotton Candy Bingsu" loading="lazy">
-      <img src="image5.jpeg" alt="Strawberry Waffle" loading="lazy">
-      <img src="image7.jpeg" alt="Strawberry Waffle" loading="lazy">
-      <img src="image8.jpeg" alt="Strawberry Waffle" loading="lazy">
-      <img src="image9.jpeg" alt="Strawberry Waffle" loading="lazy">
-      <img src="image10.jpeg" alt="Strawberry Waffle" loading="lazy">
-      <img src="image11.jpeg" alt="Strawberry Waffle" loading="lazy">
-      <img src="pickledeggs.jpeg" alt="Pickled Eggs" loading="lazy">
-      <img src="pickledpapaya.jpeg" alt="Pickled Papaya" loading="lazy">
-    </div>
-  </section>
+    <section id="menu">
+      <h2>Our Menu</h2>
+      <div class="grid">
+        <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" loading="lazy" />
+        <img src="image0.jpeg" alt="Strawberry Bingsu" loading="lazy" />
+        <img src="image1.jpeg" alt="Mango Bingsu" loading="lazy" />
+        <img src="image2.jpeg" alt="Cotton Candy Bingsu" loading="lazy" />
+        <img src="image5.jpeg" alt="Strawberry Waffle" loading="lazy" />
+        <img src="image7.jpeg" alt="Strawberry Waffle" loading="lazy" />
+        <img src="image8.jpeg" alt="Strawberry Waffle" loading="lazy" />
+        <img src="image9.jpeg" alt="Strawberry Waffle" loading="lazy" />
+        <img src="image10.jpeg" alt="Strawberry Waffle" loading="lazy" />
+        <img src="image11.jpeg" alt="Strawberry Waffle" loading="lazy" />
+        <img src="pickledeggs.jpeg" alt="Pickled Eggs" loading="lazy" />
+        <img src="pickledpapaya.jpeg" alt="Pickled Papaya" loading="lazy" />
+      </div>
+    </section>
 
-  <section id="events">
-    <h2>Our Events</h2>
-    <div class="grid-container">
-      <img src="IMG_6170.jpeg" alt="Event Booth" loading="lazy">
-      <img src="IMG_6171.jpeg" alt="Event Crowd" loading="lazy">
-      <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" loading="lazy">
-      <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" loading="lazy">
-      <img src="IMG_6194.jpeg" alt="Event Image 2" loading="lazy">
-      <img src="IMG_6195.jpeg" alt="Event Image 1" loading="lazy">
-    </div>
-  </section>
+    <section id="events">
+      <h2>Our Events</h2>
+      <div class="grid">
+        <img src="IMG_6170.jpeg" alt="Event Booth" loading="lazy" />
+        <img src="IMG_6171.jpeg" alt="Event Crowd" loading="lazy" />
+        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" loading="lazy" />
+        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" loading="lazy" />
+        <img src="IMG_6194.jpeg" alt="Event Image 2" loading="lazy" />
+        <img src="IMG_6195.jpeg" alt="Event Image 1" loading="lazy" />
+      </div>
+    </section>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
-    <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
-  </section>
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
+      <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
+    </section>
+  </div>
 
-  <!-- Scroll-to-top button -->
-  <button id="scrollTopBtn" title="Go to top">↑</button>
+  <button id="scrollTopBtn" title="Scroll to top">↑</button>
 
   <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+    // Smooth Scrolling
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
       });
     });
-
-    // Scroll-to-top button functionality
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-
+    // Scroll-to-top button
+    const scrollBtn = document.getElementById("scrollTopBtn");
     window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        scrollTopBtn.style.display = "block";
-      } else {
-        scrollTopBtn.style.display = "none";
-      }
+      scrollBtn.style.display = window.pageYOffset > 200 ? "block" : "none";
     });
-
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
