@@ -6,70 +6,84 @@
   <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online." />
   <meta name="keywords" content="shaved ice, bingsu, desserts, events, food" />
   <meta name="author" content="Jonathan Pablo" />
-  <title>JJ Shaved Ice</title>
+  <title>JJ Shaved Ice - Combined Design</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
-  <link rel="preload" href="2JJ.jpg" as="image" />
-  <link rel="preload" href="JJflyer.jpg" as="image" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lobster&display=swap" rel="stylesheet" />
   <style>
     /* Global Reset & Base Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Lobster', sans-serif;
+      font-family: 'Playfair Display', serif;
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      line-height: 1.4;
+      display: flex;
+      min-height: 100vh;
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 0 15px;
-    }
-    header {
-      background: linear-gradient(to right, rgba(255,102,153,0.9), rgba(255,51,102,0.9));
-      padding: 10px;
-      text-align: center;
-      position: sticky;
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 250px;
+      background: #03396c;
+      padding: 20px;
+      min-height: 100vh;
+      color: #fff;
+      position: fixed;
       top: 0;
-      z-index: 1000;
-    }
-    header img {
-      max-width: 100px;
-      height: auto;
-      margin-bottom: 5px;
-    }
-    header h1 { font-size: 1.8rem; margin-bottom: 5px; }
-    header p { font-size: 1rem; }
-    nav {
-      background: rgba(255,255,255,0.8);
-      padding: 5px 0;
+      left: 0;
       text-align: center;
     }
-    nav a {
-      color: #ff3366;
+    .sidebar img.logo {
+      max-width: 100%;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    .sidebar h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .sidebar p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .sidebar nav a {
+      display: block;
+      color: #fff;
       text-decoration: none;
-      margin: 0 10px;
-      font-size: 1.1rem;
+      margin: 10px 0;
+      font-weight: bold;
       transition: color 0.3s;
     }
-    nav a:hover { color: #d35400; }
-    section {
-      background: rgba(255,255,255,0.9);
-      margin: 15px 0;
-      padding: 15px;
-      border-radius: 8px;
+    .sidebar nav a:hover {
+      color: #ff9a8d;
     }
-    .main-photo {
+    /* Main Content Area */
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      background: rgba(255, 255, 255, 0.9);
+      min-height: 100vh;
+    }
+    .hero-section {
+      margin-bottom: 20px;
+    }
+    .hero-section .hero {
       width: 100%;
       border-radius: 8px;
-      margin-bottom: 10px;
       cursor: pointer;
+      display: block;
     }
-    h2 {
-      color: #d35400;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    .section {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      margin-bottom: 15px;
+      color: #03396c;
       text-align: center;
     }
     .grid {
@@ -80,15 +94,17 @@
     .grid img {
       width: 100%;
       border-radius: 6px;
-      transition: transform 0.3s ease;
       cursor: pointer;
+      transition: transform 0.3s ease;
     }
-    .grid img:hover { transform: scale(1.05); }
+    .grid img:hover {
+      transform: scale(1.05);
+    }
     .contact {
-      background: linear-gradient(to right, #ff6699, #ff3366);
-      color: #fff;
       text-align: center;
       padding: 15px;
+      background: linear-gradient(to right, #ff6699, #ff3366);
+      color: #fff;
       border-radius: 8px;
     }
     .contact a {
@@ -98,7 +114,9 @@
       border-bottom: 2px solid transparent;
       transition: border-bottom 0.3s ease;
     }
-    .contact a:hover { border-bottom: 2px solid #fff; }
+    .contact a:hover {
+      border-bottom: 2px solid #fff;
+    }
     /* Scroll-to-top Button */
     #scrollTopBtn {
       position: fixed;
@@ -114,8 +132,10 @@
       display: none;
       z-index: 1001;
     }
-    #scrollTopBtn:hover { background-color: #d35400; }
-    /* Lightbox (Photo Album) Styles */
+    #scrollTopBtn:hover {
+      background-color: #d35400;
+    }
+    /* Lightbox Modal */
     .lightbox-modal {
       display: none;
       position: fixed;
@@ -157,34 +177,43 @@
     .prev { left: 10px; }
     .next { right: 10px; }
     .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+    /* Mark clickable images for lightbox */
+    .clickable { cursor: pointer; }
     /* Mobile Adjustments */
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      nav a { font-size: 1rem; margin: 0 5px; }
-      .grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        text-align: center;
+      }
+      .content { margin-left: 0; }
+      .sidebar nav a {
+        display: inline-block;
+        margin: 0 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="2JJ.jpg" alt="JJ Shaved Ice Logo" />
-      <h1>JJ's Shaved Ice!</h1>
-      <p>Delicious Shaved Ice & Treats!</p>
-    </header>
-
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <img src="2JJ.jpg" alt="Logo" class="logo" />
+    <h1>JJ's Shaved Ice</h1>
+    <p>Elegant & Refreshing Treats</p>
     <nav>
       <a href="#menu">Menu</a>
       <a href="#events">Events</a>
       <a href="#contact">Contact</a>
     </nav>
+  </div>
 
-    <section>
-      <!-- Main flyer photo marked as clickable -->
-      <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo clickable" loading="lazy" />
+  <!-- Main Content -->
+  <div class="content">
+    <section class="hero-section">
+      <img src="JJflyer.jpg" alt="Flyer" class="hero clickable" loading="lazy" />
     </section>
-
-    <section id="menu">
+    <section id="menu" class="section">
       <h2>Our Menu</h2>
       <div class="grid">
         <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" class="clickable" loading="lazy" />
@@ -201,20 +230,18 @@
         <img src="pickledpapaya.jpeg" alt="Pickled Papaya" class="clickable" loading="lazy" />
       </div>
     </section>
-
-    <section id="events">
+    <section id="events" class="section">
       <h2>Our Events</h2>
       <div class="grid">
         <img src="IMG_6170.jpeg" alt="Event Booth" class="clickable" loading="lazy" />
         <img src="IMG_6171.jpeg" alt="Event Crowd" class="clickable" loading="lazy" />
-        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" class="clickable" loading="lazy" />
-        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" class="clickable" loading="lazy" />
-        <img src="IMG_6194.jpeg" alt="Event Image 2" class="clickable" loading="lazy" />
-        <img src="IMG_6195.jpeg" alt="Event Image 1" class="clickable" loading="lazy" />
+        <img src="IMG_6175.jpeg" alt="JJ Booth" class="clickable" loading="lazy" />
+        <img src="IMG_6191.jpeg" alt="Serving" class="clickable" loading="lazy" />
+        <img src="IMG_6194.jpeg" alt="Event Image" class="clickable" loading="lazy" />
+        <img src="IMG_6195.jpeg" alt="Event Image" class="clickable" loading="lazy" />
       </div>
     </section>
-
-    <section id="contact" class="contact">
+    <section id="contact" class="section contact">
       <h2>Contact Us</h2>
       <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
       <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
@@ -227,88 +254,78 @@
   <!-- Lightbox Modal -->
   <div id="lightboxModal" class="lightbox-modal">
     <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightboxImg">
+    <img class="lightbox-content" id="lightboxImg" alt="Enlarged Image">
     <a class="prev">&#10094;</a>
     <a class="next">&#10095;</a>
   </div>
 
   <script>
-    // Smooth Scrolling for nav links
-    document.querySelectorAll('nav a').forEach(link => {
+    // Smooth scrolling for sidebar navigation links
+    document.querySelectorAll('.sidebar nav a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
 
-    // Scroll-to-top Button
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    // Scroll-to-top button functionality
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
-      scrollTopBtn.style.display = window.pageYOffset > 200 ? "block" : "none";
+      scrollTopBtn.style.display = window.pageYOffset > 200 ? 'block' : 'none';
     });
     scrollTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Lightbox Functionality
-    const modal = document.getElementById("lightboxModal");
-    const modalImg = document.getElementById("lightboxImg");
-    const closeBtn = document.querySelector(".lightbox-modal .close");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
-    // Gather all clickable images in an array
+    // Lightbox functionality with gallery navigation
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    const closeBtn = document.querySelector('.lightbox-modal .close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
     const galleryImages = Array.from(document.querySelectorAll('.clickable'));
     let currentIndex = 0;
 
-    // Open modal and display image at index
     function openModal(index) {
       currentIndex = index;
-      modal.style.display = "block";
+      modal.style.display = 'block';
       modalImg.src = galleryImages[currentIndex].src;
     }
 
-    // Close modal
     function closeModal() {
-      modal.style.display = "none";
+      modal.style.display = 'none';
     }
 
-    // Show next image in gallery
     function showNext() {
       currentIndex = (currentIndex + 1) % galleryImages.length;
       modalImg.src = galleryImages[currentIndex].src;
     }
 
-    // Show previous image in gallery
     function showPrev() {
       currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
       modalImg.src = galleryImages[currentIndex].src;
     }
 
-    // Attach click event to each clickable image
     galleryImages.forEach((img, index) => {
       img.addEventListener('click', () => {
         openModal(index);
       });
     });
 
-    // Event listeners for modal controls
     closeBtn.addEventListener('click', closeModal);
     nextBtn.addEventListener('click', showNext);
     prevBtn.addEventListener('click', showPrev);
 
-    // Close modal when clicking outside the image
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
+      if(e.target === modal) closeModal();
     });
 
-    // Keyboard navigation support
+    // Keyboard navigation support for lightbox
     document.addEventListener('keydown', (e) => {
-      if (modal.style.display === "block") {
-        if (e.key === "ArrowRight") showNext();
-        if (e.key === "ArrowLeft") showPrev();
-        if (e.key === "Escape") closeModal();
+      if(modal.style.display === 'block') {
+        if(e.key === 'ArrowRight') showNext();
+        if(e.key === 'ArrowLeft') showPrev();
+        if(e.key === 'Escape') closeModal();
       }
     });
   </script>
