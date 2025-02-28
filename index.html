@@ -11,14 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
   <link rel="preload" href="2JJ.jpg" as="image" />
   <link rel="preload" href="JJflyer.jpg" as="image" />
-
   <style>
-    /* Reset and Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Global Reset & Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Lobster', sans-serif;
       background: url('background.jpg') no-repeat center center fixed;
@@ -44,13 +39,8 @@
       height: auto;
       margin-bottom: 5px;
     }
-    header h1 {
-      font-size: 1.8rem;
-      margin-bottom: 5px;
-    }
-    header p {
-      font-size: 1rem;
-    }
+    header h1 { font-size: 1.8rem; margin-bottom: 5px; }
+    header p { font-size: 1rem; }
     nav {
       background: rgba(255,255,255,0.8);
       padding: 5px 0;
@@ -61,10 +51,9 @@
       text-decoration: none;
       margin: 0 10px;
       font-size: 1.1rem;
+      transition: color 0.3s;
     }
-    nav a:hover {
-      color: #d35400;
-    }
+    nav a:hover { color: #d35400; }
     section {
       background: rgba(255,255,255,0.9);
       margin: 15px 0;
@@ -75,6 +64,7 @@
       width: 100%;
       border-radius: 8px;
       margin-bottom: 10px;
+      cursor: pointer;
     }
     h2 {
       color: #d35400;
@@ -91,10 +81,9 @@
       width: 100%;
       border-radius: 6px;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
-    .grid img:hover {
-      transform: scale(1.05);
-    }
+    .grid img:hover { transform: scale(1.05); }
     .contact {
       background: linear-gradient(to right, #ff6699, #ff3366);
       color: #fff;
@@ -106,11 +95,11 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s ease;
     }
-    .contact a:hover {
-      text-decoration: underline;
-    }
-    /* Scroll-to-top button */
+    .contact a:hover { border-bottom: 2px solid #fff; }
+    /* Scroll-to-top Button */
     #scrollTopBtn {
       position: fixed;
       bottom: 20px;
@@ -123,22 +112,56 @@
       font-size: 1rem;
       cursor: pointer;
       display: none;
+      z-index: 1001;
     }
-    #scrollTopBtn:hover {
-      background-color: #d35400;
+    #scrollTopBtn:hover { background-color: #d35400; }
+    /* Lightbox (Photo Album) Styles */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
     }
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 6px;
+    }
+    .lightbox-modal .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 40px;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
     /* Mobile Adjustments */
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      nav a {
-        font-size: 1rem;
-        margin: 0 5px;
-      }
-      .grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      }
+      header h1 { font-size: 1.5rem; }
+      nav a { font-size: 1rem; margin: 0 5px; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
     }
   </style>
 </head>
@@ -157,36 +180,37 @@
     </nav>
 
     <section>
-      <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo" loading="lazy" />
+      <!-- Main flyer photo marked as clickable -->
+      <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo clickable" loading="lazy" />
     </section>
 
     <section id="menu">
       <h2>Our Menu</h2>
       <div class="grid">
-        <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" loading="lazy" />
-        <img src="image0.jpeg" alt="Strawberry Bingsu" loading="lazy" />
-        <img src="image1.jpeg" alt="Mango Bingsu" loading="lazy" />
-        <img src="image2.jpeg" alt="Cotton Candy Bingsu" loading="lazy" />
-        <img src="image5.jpeg" alt="Strawberry Waffle" loading="lazy" />
-        <img src="image7.jpeg" alt="Strawberry Waffle" loading="lazy" />
-        <img src="image8.jpeg" alt="Strawberry Waffle" loading="lazy" />
-        <img src="image9.jpeg" alt="Strawberry Waffle" loading="lazy" />
-        <img src="image10.jpeg" alt="Strawberry Waffle" loading="lazy" />
-        <img src="image11.jpeg" alt="Strawberry Waffle" loading="lazy" />
-        <img src="pickledeggs.jpeg" alt="Pickled Eggs" loading="lazy" />
-        <img src="pickledpapaya.jpeg" alt="Pickled Papaya" loading="lazy" />
+        <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" class="clickable" loading="lazy" />
+        <img src="image0.jpeg" alt="Strawberry Bingsu" class="clickable" loading="lazy" />
+        <img src="image1.jpeg" alt="Mango Bingsu" class="clickable" loading="lazy" />
+        <img src="image2.jpeg" alt="Cotton Candy Bingsu" class="clickable" loading="lazy" />
+        <img src="image5.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image7.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image8.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image9.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image10.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image11.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="pickledeggs.jpeg" alt="Pickled Eggs" class="clickable" loading="lazy" />
+        <img src="pickledpapaya.jpeg" alt="Pickled Papaya" class="clickable" loading="lazy" />
       </div>
     </section>
 
     <section id="events">
       <h2>Our Events</h2>
       <div class="grid">
-        <img src="IMG_6170.jpeg" alt="Event Booth" loading="lazy" />
-        <img src="IMG_6171.jpeg" alt="Event Crowd" loading="lazy" />
-        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" loading="lazy" />
-        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" loading="lazy" />
-        <img src="IMG_6194.jpeg" alt="Event Image 2" loading="lazy" />
-        <img src="IMG_6195.jpeg" alt="Event Image 1" loading="lazy" />
+        <img src="IMG_6170.jpeg" alt="Event Booth" class="clickable" loading="lazy" />
+        <img src="IMG_6171.jpeg" alt="Event Crowd" class="clickable" loading="lazy" />
+        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" class="clickable" loading="lazy" />
+        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" class="clickable" loading="lazy" />
+        <img src="IMG_6194.jpeg" alt="Event Image 2" class="clickable" loading="lazy" />
+        <img src="IMG_6195.jpeg" alt="Event Image 1" class="clickable" loading="lazy" />
       </div>
     </section>
 
@@ -197,10 +221,19 @@
     </section>
   </div>
 
+  <!-- Scroll-to-top Button -->
   <button id="scrollTopBtn" title="Scroll to top">↑</button>
 
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg">
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+  </div>
+
   <script>
-    // Smooth Scrolling
+    // Smooth Scrolling for nav links
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -209,13 +242,74 @@
         });
       });
     });
-    // Scroll-to-top button
-    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    // Scroll-to-top Button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
     window.addEventListener('scroll', () => {
-      scrollBtn.style.display = window.pageYOffset > 200 ? "block" : "none";
+      scrollTopBtn.style.display = window.pageYOffset > 200 ? "block" : "none";
     });
-    scrollBtn.addEventListener('click', () => {
+    scrollTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Lightbox Functionality
+    const modal = document.getElementById("lightboxModal");
+    const modalImg = document.getElementById("lightboxImg");
+    const closeBtn = document.querySelector(".lightbox-modal .close");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    // Gather all clickable images in an array
+    const galleryImages = Array.from(document.querySelectorAll('.clickable'));
+    let currentIndex = 0;
+
+    // Open modal and display image at index
+    function openModal(index) {
+      currentIndex = index;
+      modal.style.display = "block";
+      modalImg.src = galleryImages[currentIndex].src;
+    }
+
+    // Close modal
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Show next image in gallery
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      modalImg.src = galleryImages[currentIndex].src;
+    }
+
+    // Show previous image in gallery
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      modalImg.src = galleryImages[currentIndex].src;
+    }
+
+    // Attach click event to each clickable image
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        openModal(index);
+      });
+    });
+
+    // Event listeners for modal controls
+    closeBtn.addEventListener('click', closeModal);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', (e) => {
+      if (modal.style.display === "block") {
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "ArrowLeft") showPrev();
+        if (e.key === "Escape") closeModal();
+      }
     });
   </script>
 </body>
