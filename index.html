@@ -1,295 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online.">
-    <meta name="keywords" content="shaved ice, bingsu, desserts, events, food">
-    <meta name="author" content="Jonathan Pablo">
-    <title>JJ Shaved Ice</title>
-
-    <!-- Google Fonts for styling -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Arial&display=swap" rel="stylesheet">
-    <link rel="preload" href="2JJ.jpg" as="image">
-    <link rel="preload" href="JJflyer.jpg" as="image">
-
-    <style>
-        /* ----- BASIC RESET & FONTS ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body { 
-            font-family: 'Lobster', sans-serif; 
-            text-align: center; 
-            background: url('background.jpg') no-repeat center center fixed; 
-            background-size: cover; 
-            background-position: center;
-            color: #333;
-        }
-
-        /* ----- HEADER STYLING ----- */
-        header { 
-            background: linear-gradient(to right, #ff6699, #ff3366); 
-            padding: 20px; 
-            font-size: 36px; 
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header img {
-            max-width: 250px;
-            height: auto;
-        }
-
-        /* ----- NAVIGATION STYLING ----- */
-        nav {
-            margin: 20px 0;
-        }
-        nav ul {
-            list-style: none; 
-            padding: 0; 
-            margin: 0;
-        }
-        nav li {
-            display: inline-block; 
-            margin: 0 15px;
-        }
-        nav a {
-            font-size: 40px;
-            color: #ff3366;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* ----- MAIN CONTENT SECTIONS ----- */
-        section { 
-            padding: 20px; 
-            width: 90%;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-        .main-photo {
-            margin-top: 20px;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        /* ----- MENU SECTION ----- */
-        #menu h2 {
-            font-size: 48px;
-            color: #d35400;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
-        }
-        #menu img {
-            max-width: 200px;
-            margin: 10px;
-        }
-
-        /* ----- EVENTS SECTION ----- */
-        #events h2 {
-            font-size: 48px;
-            color: #d35400;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
-        }
-        #events img {
-            max-width: 40%; 
-            height: auto;
-            object-fit: contain;
-            margin: 10px auto;
-        }
-
-        /* ----- CONTACT SECTION ----- */
-        .contact { 
-            background: #ff6699; 
-            color: #000; 
-            padding: 25px; 
-            font-size: 18px;
-            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
-            margin-top: 40px;
-        }
-        .contact h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-        .contact a {
-            font-weight: bold;
-            color: #ff3366;
-            text-decoration: none;
-        }
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* ----- SPONSORS SECTION ----- */
-        .sponsors {
-            margin-top: 40px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .sponsors h2 {
-            font-size: 48px;
-            color: #d35400;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
-        }
-        .sponsor-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .sponsor-item {
-            background: #fff;
-            margin: 10px;
-            padding: 15px;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-        .sponsor-item:hover {
-            transform: scale(1.02);
-        }
-        .sponsor-item h3 {
-            margin-bottom: 8px;
-            color: #ff3366;
-        }
-        .sponsor-item p {
-            font-size: 18px;
-            line-height: 1.4;
-        }
-
-        /* ----- IMAGES HOVER EFFECT ----- */
-        img { 
-            max-width: 100%; 
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        /* ----- MEDIA QUERIES FOR RESPONSIVENESS ----- */
-        @media (max-width: 768px) {
-            header {
-                font-size: 30px;
-            }
-            nav a {
-                font-size: 30px;
-            }
-            #menu img, #events img {
-                max-width: 70%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online." />
+  <meta name="keywords" content="shaved ice, bingsu, desserts, events, food" />
+  <meta name="author" content="Jonathan Pablo" />
+  <title>JJ Shaved Ice - Combined Design</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lobster&display=swap" rel="stylesheet" />
+  <style>
+    /* Global Reset & Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Playfair Display', serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 250px;
+      background: #03396c;
+      padding: 20px;
+      min-height: 100vh;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      text-align: center;
+    }
+    .sidebar img.logo {
+      max-width: 100%;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    .sidebar h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .sidebar p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .sidebar nav a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 10px 0;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .sidebar nav a:hover {
+      color: #ff9a8d;
+    }
+    /* Main Content Area */
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      background: rgba(255, 255, 255, 0.9);
+      min-height: 100vh;
+    }
+    .hero-section {
+      margin-bottom: 20px;
+    }
+    .hero-section .hero {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+    }
+    .section {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      margin-bottom: 15px;
+      color: #03396c;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .grid img {
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .grid img:hover {
+      transform: scale(1.05);
+    }
+    .contact {
+      text-align: center;
+      padding: 15px;
+      background: linear-gradient(to right, #ff6699, #ff3366);
+      color: #fff;
+      border-radius: 8px;
+    }
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s ease;
+    }
+    .contact a:hover {
+      border-bottom: 2px solid #fff;
+    }
+    /* Sponsors Section */
+    .sponsors {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .sponsors h2 {
+      margin-bottom: 15px;
+      color: #03396c;
+      text-align: center;
+    }
+    .sponsor-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .sponsor-item {
+      background: #f8f8f8;
+      padding: 10px 15px;
+      margin: 10px 0;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .sponsor-item:hover {
+      transform: scale(1.02);
+    }
+    .sponsor-item h3 {
+      margin-bottom: 8px;
+      color: #ff3366;
+    }
+    .sponsor-item p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    /* Scroll-to-top Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff3366;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1001;
+    }
+    #scrollTopBtn:hover {
+      background-color: #d35400;
+    }
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 6px;
+    }
+    .lightbox-modal .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 40px;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+    /* Mark clickable images for lightbox */
+    .clickable { cursor: pointer; }
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        text-align: center;
+      }
+      .content { margin-left: 0; }
+      .sidebar nav a {
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <header>
-        <img src="2JJ.jpg" alt="JJ Shaved Ice Logo">
-        <h1>JJ's Shaved Ice!</h1>
-        <p>Delicious Shaved Ice & Treats!</p>
-    </header>
-
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <img src="2JJ.jpg" alt="Logo" class="logo" />
+    <h1>JJ's Shaved Ice</h1>
+    <p>Elegant & Refreshing Treats</p>
     <nav>
-        <ul>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <!-- New Sponsors link -->
-            <li><a href="#sponsors">Sponsors</a></li>
-        </ul>
+      <a href="#menu">Menu</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+      <!-- New Sponsors link -->
+      <a href="#sponsors">Sponsors</a>
     </nav>
+  </div>
 
-    <!-- MAIN FLYER -->
-    <section>
-        <img src="JJflyer.jpg" alt="JJ Shaved Ice Flyer" class="main-photo">
+  <!-- Main Content -->
+  <div class="content">
+    <section class="hero-section">
+      <img src="JJflyer.jpg" alt="Flyer" class="hero clickable" loading="lazy" />
     </section>
-
-    <!-- MENU SECTION -->
-    <section id="menu">
-        <h2>Our Menu</h2>
-        <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" loading="lazy">
-        <img src="image0.jpeg" alt="Strawberry Bingsu" loading="lazy">
-        <img src="image1.jpeg" alt="Mango Bingsu" loading="lazy">
-        <img src="image2.jpeg" alt="Cotton Candy Bingsu" loading="lazy">
-        <img src="image5.jpeg" alt="Strawberry Waffle" loading="lazy">
-        <img src="image7.jpeg" alt="Strawberry Waffle" loading="lazy">
-        <img src="image8.jpeg" alt="Strawberry Waffle" loading="lazy">
-        <img src="image9.jpeg" alt="Strawberry Waffle" loading="lazy">
-        <img src="image10.jpeg" alt="Strawberry Waffle" loading="lazy">
-        <img src="image11.jpeg" alt="Strawberry Waffle" loading="lazy">
-        <img src="pickledeggs.jpeg" alt="Pickled Eggs" loading="lazy">
-        <img src="pickledpapaya.jpeg" alt="Pickled Papaya" loading="lazy">
+    <section id="menu" class="section">
+      <h2>Our Menu</h2>
+      <div class="grid">
+        <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" class="clickable" loading="lazy" />
+        <img src="image0.jpeg" alt="Strawberry Bingsu" class="clickable" loading="lazy" />
+        <img src="image1.jpeg" alt="Mango Bingsu" class="clickable" loading="lazy" />
+        <img src="image2.jpeg" alt="Cotton Candy Bingsu" class="clickable" loading="lazy" />
+        <img src="image5.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image7.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image8.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image9.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image10.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="image11.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
+        <img src="pickledeggs.jpeg" alt="Pickled Eggs" class="clickable" loading="lazy" />
+        <img src="pickledpapaya.jpeg" alt="Pickled Papaya" class="clickable" loading="lazy" />
+      </div>
     </section>
-
-    <!-- EVENTS SECTION -->
-    <section id="events">
-        <h2>Our Events</h2>
-        <img src="IMG_6170.jpeg" alt="Event Booth" loading="lazy">
-        <img src="IMG_6171.jpeg" alt="Event Crowd" loading="lazy">
-        <img src="IMG_6175.jpeg" alt="JJ Shaved Ice Booth" loading="lazy">
-        <img src="IMG_6191.jpeg" alt="JJ Shaved Ice Serving" loading="lazy">
-        <img src="IMG_6194.jpeg" alt="Event Image 2" loading="lazy">
-        <img src="IMG_6195.jpeg" alt="Event Image 1" loading="lazy">
+    <section id="events" class="section">
+      <h2>Our Events</h2>
+      <div class="grid">
+        <img src="IMG_6170.jpeg" alt="Event Booth" class="clickable" loading="lazy" />
+        <img src="IMG_6171.jpeg" alt="Event Crowd" class="clickable" loading="lazy" />
+        <img src="IMG_6175.jpeg" alt="JJ Booth" class="clickable" loading="lazy" />
+        <img src="IMG_6191.jpeg" alt="Serving" class="clickable" loading="lazy" />
+        <img src="IMG_6194.jpeg" alt="Event Image" class="clickable" loading="lazy" />
+        <img src="IMG_6195.jpeg" alt="Event Image" class="clickable" loading="lazy" />
+      </div>
     </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
-        <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
+    <section id="contact" class="section contact">
+      <h2>Contact Us</h2>
+      <p>📞 Phone: <a href="tel:5037077679">503-707-7679</a></p>
+      <p>📷 Instagram: <a href="https://www.instagram.com/jjshavedice2024" target="_blank">@jjshavedice2024</a></p>
     </section>
-
-    <!-- SPONSORS SECTION (NEW) -->
-    <section id="sponsors" class="sponsors">
-        <h2>Our Sponsors</h2>
-        <p>We'd like to thank our amazing sponsors for their support:</p>
-
-        <div class="sponsor-list">
-            <!-- Example sponsor items -->
-            <div class="sponsor-item">
-                <h3>Cool Company LLC</h3>
-                <p>Providing quality cups and spoons for all our shaved ice treats!</p>
-            </div>
-            <div class="sponsor-item">
-                <h3>Flavor Fiesta Inc.</h3>
-                <p>Our go-to for the best syrup flavors in town.</p>
-            </div>
+    <!-- Sponsors Section (New) -->
+    <section id="sponsors" class="section sponsors">
+      <h2>Our Sponsors</h2>
+      <p>We'd like to thank our amazing sponsors for their support:</p>
+      <div class="sponsor-list">
+        <div class="sponsor-item">
+          <h3>Cool Company LLC</h3>
+          <p>Providing quality cups and spoons for all our shaved ice treats!</p>
         </div>
+        <div class="sponsor-item">
+          <h3>Flavor Fiesta Inc.</h3>
+          <p>Our go-to for the best syrup flavors in town.</p>
+        </div>
+      </div>
     </section>
+  </div>
 
-    <!-- OPTIONAL JAVASCRIPT (for simple sponsor hover effect) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sponsorItems = document.querySelectorAll('.sponsor-item');
-            sponsorItems.forEach(item => {
-                item.addEventListener('mouseover', () => {
-                    item.style.transform = 'scale(1.03)';
-                });
-                item.addEventListener('mouseout', () => {
-                    item.style.transform = 'scale(1)';
-                });
-            });
-        });
-    </script>
+  <!-- Scroll-to-top Button -->
+  <button id="scrollTopBtn" title="Scroll to top">↑</button>
 
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg" alt="Enlarged Image">
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+  </div>
+
+  <script>
+    // Smooth scrolling for sidebar navigation links
+    document.querySelectorAll('.sidebar nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Scroll-to-top button functionality
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.style.display = window.pageYOffset > 200 ? 'block' : 'none';
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Lightbox functionality with gallery navigation
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    const closeBtn = document.querySelector('.lightbox-modal .close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const galleryImages = Array.from(document.querySelectorAll('.clickable'));
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      modal.style.display = 'block';
+      modalImg.src = galleryImages[currentIndex].src;
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      modalImg.src = galleryImages[currentIndex].src;
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      modalImg.src = galleryImages[currentIndex].src;
+    }
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        openModal(index);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) closeModal();
+    });
+
+    // Keyboard navigation support for lightbox
+    document.addEventListener('keydown', (e) => {
+      if(modal.style.display === 'block') {
+        if(e.key === 'ArrowRight') showNext();
+        if(e.key === 'ArrowLeft') showPrev();
+        if(e.key === 'Escape') closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
