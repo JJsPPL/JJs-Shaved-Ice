@@ -138,7 +138,18 @@
       gap: 10px;
     }
 
-    .grid img {
+    /* Remove default spacing for figure in modern browsers */
+    figure {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Style each menu item figure */
+    .grid figure {
+      text-align: center;
+    }
+
+    .grid figure img {
       width: 100%;
       border-radius: 6px;
       cursor: pointer;
@@ -146,8 +157,16 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
-    .grid img:hover {
+    .grid figure:hover img {
       transform: scale(1.05);
+    }
+
+    /* Figcaption styling for visual appeal */
+    .grid figure figcaption {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #555;
     }
 
     /* =========================
@@ -358,18 +377,55 @@
     <section id="menu" class="section">
       <h2>Our Menu</h2>
       <div class="grid">
-        <img src="Blueberry Shaved Ice.jpeg" alt="Blueberry Shaved Ice" class="clickable" loading="lazy" />
-        <img src="Strawberry Shaved Ice.jpeg" alt="Strawberry Shaved Ice" class="clickable" loading="lazy" />
-        <img src="Lime Shaved Ice.jpeg" alt="Lime Shaved Ice" class="clickable" loading="lazy" />
-        <img src="Mango Bingsu.jpeg" alt="Mango Bingsu" class="clickable" loading="lazy" />
-        <img src="Cotton Candy Bingsu.jpeg" alt="Cotton Candy Bingsu" class="clickable" loading="lazy" />
-        <img src="Strawberry Bingsu.jpeg" alt="Strawberry Bingsu" class="clickable" loading="lazy" />
-        <img src="Chocolate Banana Craffle.jpeg" alt="Chocolate Banana Craffle" class="clickable" loading="lazy" />
-        <img src="Oreo Craffle.jpeg" alt="Oreo Craffle" class="clickable" loading="lazy" />
-        <img src="Strawberry Craffle.jpeg" alt="Strawberry Craffle" class="clickable" loading="lazy" />
-        <img src="Calamanci Lemonade.jpeg" alt="Calamanci Lemonade" class="clickable" loading="lazy" />
-        <img src="Pickled Eggs.jpeg" alt="Pickled Eggs" class="clickable" loading="lazy" />
-        <img src="Pickled Papaya.jpeg" alt="Pickled Papaya" class="clickable" loading="lazy" />
+        <!-- Replace each <img> with <figure> containing <img> and <figcaption> -->
+        <figure>
+          <img src="Blueberry Shaved Ice.jpeg" alt="Blueberry Shaved Ice" class="clickable" loading="lazy" />
+          <figcaption>Blueberry Shaved Ice</figcaption>
+        </figure>
+        <figure>
+          <img src="Strawberry Shaved Ice.jpeg" alt="Strawberry Shaved Ice" class="clickable" loading="lazy" />
+          <figcaption>Strawberry Shaved Ice</figcaption>
+        </figure>
+        <figure>
+          <img src="Lime Shaved Ice.jpeg" alt="Lime Shaved Ice" class="clickable" loading="lazy" />
+          <figcaption>Lime Shaved Ice</figcaption>
+        </figure>
+        <figure>
+          <img src="Mango Bingsu.jpeg" alt="Mango Bingsu" class="clickable" loading="lazy" />
+          <figcaption>Mango Bingsu</figcaption>
+        </figure>
+        <figure>
+          <img src="Cotton Candy Bingsu.jpeg" alt="Cotton Candy Bingsu" class="clickable" loading="lazy" />
+          <figcaption>Cotton Candy Bingsu</figcaption>
+        </figure>
+        <figure>
+          <img src="Strawberry Bingsu.jpeg" alt="Strawberry Bingsu" class="clickable" loading="lazy" />
+          <figcaption>Strawberry Bingsu</figcaption>
+        </figure>
+        <figure>
+          <img src="Chocolate Banana Craffle.jpeg" alt="Chocolate Banana Craffle" class="clickable" loading="lazy" />
+          <figcaption>Chocolate Banana Craffle</figcaption>
+        </figure>
+        <figure>
+          <img src="Oreo Craffle.jpeg" alt="Oreo Craffle" class="clickable" loading="lazy" />
+          <figcaption>Oreo Craffle</figcaption>
+        </figure>
+        <figure>
+          <img src="Strawberry Craffle.jpeg" alt="Strawberry Craffle" class="clickable" loading="lazy" />
+          <figcaption>Strawberry Craffle</figcaption>
+        </figure>
+        <figure>
+          <img src="Calamanci Lemonade.jpeg" alt="Calamanci Lemonade" class="clickable" loading="lazy" />
+          <figcaption>Calamanci Lemonade</figcaption>
+        </figure>
+        <figure>
+          <img src="Pickled Eggs.jpeg" alt="Pickled Eggs" class="clickable" loading="lazy" />
+          <figcaption>Pickled Eggs</figcaption>
+        </figure>
+        <figure>
+          <img src="Pickled Papaya.jpeg" alt="Pickled Papaya" class="clickable" loading="lazy" />
+          <figcaption>Pickled Papaya</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -377,6 +433,7 @@
     <section id="events" class="section">
       <h2>Our Events</h2>
       <div class="grid">
+        <!-- Events images remain as is (no captions needed) -->
         <img src="IMG_6170.jpeg" alt="Event Booth" class="clickable" loading="lazy" />
         <img src="IMG_6171.jpeg" alt="Event Crowd" class="clickable" loading="lazy" />
         <img src="IMG_6175.jpeg" alt="JJ Booth" class="clickable" loading="lazy" />
