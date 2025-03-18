@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="JJ's Shaved Ice offers delicious shaved ice, bingsu, and more! Visit us at our events or order online."/>
-  <meta name="keywords" content="shaved ice, bingsu, desserts, events, food"/>
+  <meta name="description" content="JJ's Shaved Ice & Catering offers delicious shaved ice, bingsu, and a variety of hot foods for events all year round."/>
+  <meta name="keywords" content="shaved ice, bingsu, desserts, events, food, catering, hot food"/>
   <meta name="author" content="Jonathan Pablo"/>
-  <title>JJ's Shaved Ice - Elegant & Classic in Blue</title>
+  <title>JJ's Shaved Ice & Catering - Refreshing & Delicious All Year Round</title>
 
   <!-- Google Fonts -->
   <link
@@ -26,7 +26,7 @@
 
     body {
       font-family: 'Playfair Display', serif;
-      background-color: #e6f2f5; /* Light bluish background */
+      background: linear-gradient(to bottom, #e6f2f5, #ffffff); /* Soft gradient background */
       color: #333;
       display: flex;             /* to accommodate sidebar + content side by side */
       min-height: 100vh;
@@ -100,6 +100,9 @@
        ========================= */
     .hero-section {
       margin-bottom: 20px;
+      position: relative;
+      text-align: center;
+      color: #fff;
     }
 
     .hero-section .hero {
@@ -108,6 +111,19 @@
       cursor: pointer;
       display: block;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    /* You can place text over the hero image if desired */
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Lobster', cursive;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     /* =========================
@@ -144,6 +160,7 @@
       cursor: pointer;
       transition: transform 0.3s ease;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      object-fit: cover;
     }
 
     .grid img:hover {
@@ -328,6 +345,10 @@
       .content {
         margin-left: 0;
       }
+
+      .hero-text {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -335,8 +356,8 @@
   <!-- SIDEBAR NAVIGATION -->
   <div class="sidebar">
     <img src="2JJ.jpg" alt="JJ Logo" class="logo" />
-    <h1>JJ's Shaved Ice</h1>
-    <p>Classic & Refreshing</p>
+    <h1>JJ's Shaved Ice &amp; Catering</h1>
+    <p>Classic, Refreshing, &amp; Now Serving Hot Food All Year Round</p>
     <nav>
       <a href="#menu">Menu</a>
       <a href="#events">Events</a>
@@ -350,25 +371,38 @@
     <!-- HERO SECTION -->
     <section class="hero-section">
       <img src="JJflyer.jpg" alt="Flyer" class="hero clickable" loading="lazy" />
+      <!-- Optional text overlay on hero image -->
+      <!-- <div class="hero-text">Taste the Difference</div> -->
     </section>
 
     <!-- MENU SECTION -->
     <section id="menu" class="section">
       <h2>Our Menu</h2>
+      <p style="text-align:center; margin-bottom: 15px;">
+        Enjoy our refreshing shaved ice, bingsu, and now hot &amp; savory catering options!
+      </p>
+
+      <!-- SHAVED ICE & BINGSU -->
+      <h3 style="text-align:center; margin-bottom:10px;">Shaved Ice &amp; Desserts</h3>
       <div class="grid">
-        <!-- UPDATED ALT TEXT HERE -->
-        <img src="blueberry.jpeg" alt="Blueberry Shevd Ice" class="clickable" loading="lazy" />
+        <!-- To add more menu photos, copy/paste more <img> tags here and update src & alt -->
+        <img src="blueberry.jpeg" alt="Blueberry Shaved Ice" class="clickable" loading="lazy" />
         <img src="image0.jpeg" alt="Strawberry Bingsu" class="clickable" loading="lazy" />
         <img src="image1.jpeg" alt="Mango Bingsu" class="clickable" loading="lazy" />
         <img src="image2.jpeg" alt="Cotton Candy Bingsu" class="clickable" loading="lazy" />
         <img src="image5.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
-        <img src="image7.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
-        <img src="image8.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
-        <img src="image9.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
-        <img src="image10.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
-        <img src="image11.jpeg" alt="Strawberry Waffle" class="clickable" loading="lazy" />
         <img src="pickledeggs.jpeg" alt="Pickled Eggs" class="clickable" loading="lazy" />
         <img src="pickledpapaya.jpeg" alt="Pickled Papaya" class="clickable" loading="lazy" />
+      </div>
+
+      <!-- HOT FOOD & CATERING OPTIONS -->
+      <h3 style="text-align:center; margin: 30px 0 10px;">Hot Food &amp; Catering</h3>
+      <div class="grid">
+        <!-- Placeholder images for new hot food items -->
+        <!-- To add more hot food photos, copy/paste more <img> tags here and update src & alt -->
+        <img src="hot_food1.jpg" alt="Delicious BBQ Ribs" class="clickable" loading="lazy" />
+        <img src="hot_food2.jpg" alt="Grilled Chicken Skewers" class="clickable" loading="lazy" />
+        <img src="hot_food3.jpg" alt="Stir-Fried Noodles" class="clickable" loading="lazy" />
       </div>
     </section>
 
