@@ -104,9 +104,11 @@
 
     .hero-section .hero {
       width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: block;
       border-radius: 8px;
       cursor: pointer;
-      display: block;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
@@ -123,14 +125,17 @@
 
     .section h2 {
       margin-bottom: 15px;
-      color: #2c3e50; /* Darker blue for headings */
       text-align: center;
       font-size: 2rem;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      /* Modern gradient text effect */
+      background: linear-gradient(to right, #4a8dae, #6cb4c6);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     /* =========================
-       MENU GRID (with captions)
+       MENU GRID
        ========================= */
     .menu-grid {
       display: grid;
@@ -142,14 +147,17 @@
       padding: 0;
       text-align: center;
     }
-    .menu-grid figure img {
+    /* Shared styles for clickable images in both menu & events */
+    .menu-grid figure img,
+    .grid img {
       width: 100%;
       border-radius: 6px;
       cursor: pointer;
       transition: transform 0.3s ease;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    .menu-grid figure img:hover {
+    .menu-grid figure img:hover,
+    .grid img:hover {
       transform: scale(1.05);
     }
     .menu-grid figure figcaption {
@@ -160,22 +168,39 @@
     }
 
     /* =========================
-       EVENTS GRID (original style)
+       PAST (OR "OUR") EVENTS GRID
        ========================= */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 10px;
     }
-    .grid img {
-      width: 100%;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+    /* =========================
+       UPCOMING EVENTS
+       ========================= */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
-    .grid img:hover {
-      transform: scale(1.05);
+    .upcoming-event {
+      background: #fff;
+      border-radius: 6px;
+      padding: 15px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .upcoming-event:hover {
+      transform: scale(1.02);
+    }
+    .upcoming-event h3 {
+      color: #4a8dae;
+      margin-bottom: 8px;
+    }
+    .upcoming-event p {
+      margin-bottom: 5px;
+      font-size: 1rem;
     }
 
     /* =========================
@@ -207,19 +232,11 @@
        ========================= */
     .sponsors {
       text-align: center;
-      padding: 20px;
       background: #fafafa;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       padding: 20px;
       margin-bottom: 30px;
-    }
-
-    .sponsors h2 {
-      color: #2c3e50;
-      margin-bottom: 15px;
-      text-align: center;
-      font-size: 2rem;
     }
 
     .sponsor-list {
@@ -370,6 +387,7 @@
     <nav>
       <a href="#menu">Menu</a>
       <a href="#events">Events</a>
+      <a href="#upcoming-events">Upcoming</a>
       <a href="#contact">Contact</a>
       <a href="#sponsors">Sponsors</a>
     </nav>
@@ -446,10 +464,9 @@
       </div>
     </section>
 
-    <!-- EVENTS SECTION -->
+    <!-- PAST/OUR EVENTS SECTION -->
     <section id="events" class="section">
       <h2>Our Events</h2>
-      <!-- Use the original .grid class for event images -->
       <div class="grid">
         <img src="IMG_6170.jpeg" alt="Event Booth" class="clickable" loading="lazy" />
         <img src="IMG_6171.jpeg" alt="Event Crowd" class="clickable" loading="lazy" />
@@ -457,6 +474,25 @@
         <img src="IMG_6191.jpeg" alt="Serving" class="clickable" loading="lazy" />
         <img src="IMG_6194.jpeg" alt="Event Image" class="clickable" loading="lazy" />
         <img src="IMG_6195.jpeg" alt="Event Image" class="clickable" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- UPCOMING EVENTS SECTION (NEW) -->
+    <section id="upcoming-events" class="section">
+      <h2>Upcoming Events</h2>
+      <div class="event-list">
+        <article class="upcoming-event">
+          <h3>Hillsboro Pride Parade</h3>
+          <p>Date: June 7, 2025</p>
+          <p>Location: Shute Park</p>
+          <p>Join us for a day of shaved ice, bingsu, and fun under the sun!</p>
+        </article>
+        <article class="upcoming-event">
+          <h3>Marianas Festival</h3>
+          <p>Date: August 23-24, 2025</p>
+          <p>Location: Blue Lake, Oregon</p>
+          <p>Experience the vibrant nightlife while enjoying our refreshing desserts.</p>
+        </article>
       </div>
     </section>
 
@@ -558,15 +594,15 @@
     prevBtn.addEventListener('click', showPrev);
 
     modal.addEventListener('click', (e) => {
-      if(e.target === modal) closeModal();
+      if (e.target === modal) closeModal();
     });
 
     // Keyboard navigation support for lightbox
     document.addEventListener('keydown', (e) => {
-      if(modal.style.display === 'block') {
-        if(e.key === 'ArrowRight') showNext();
-        if(e.key === 'ArrowLeft') showPrev();
-        if(e.key === 'Escape') closeModal();
+      if (modal.style.display === 'block') {
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'Escape') closeModal();
       }
     });
   </script>
